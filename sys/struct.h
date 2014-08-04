@@ -1,5 +1,5 @@
-//Ò»Ğ©ÓÎÏ·ÖĞ¿ÉÄÜÓÃµ½µÄ½á¹¹Ìå
-//AI¿ª·¢Õß¿ÉÒÔÑ¡ÔñĞÔÊ¹ÓÃ
+//ä¸€äº›æ¸¸æˆä¸­å¯èƒ½ç”¨åˆ°çš„ç»“æ„ä½“
+//AIå¼€å‘è€…å¯ä»¥é€‰æ‹©æ€§ä½¿ç”¨
 
 #pragma once
 using namespace std;
@@ -8,59 +8,59 @@ using namespace std;
 #include <ctime>
 #define PI 3.1415926535898
 
-//ĞÎ×´ÖÖÀà£¨Ã¶¾ÙÀàĞÍ£©
+//å½¢çŠ¶ç§ç±»ï¼ˆæšä¸¾ç±»å‹ï¼‰
 enum shapes{S_Circle,S_Box,S_Beam};
 
 
 
-//µã
+//ç‚¹
 struct Point
 {
 	double x;
 	double y;
 };
 
-//Ô²ĞÎ
+//åœ†å½¢
 struct Circle
 {
-	double x;	//Ô²ĞÄ×ø±êx
-	double y;	//Ô²ĞÄ×ø±êy
-	double r;	//Ô²ĞÎ°ë¾¶
+	double x;	//åœ†å¿ƒåæ ‡x
+	double y;	//åœ†å¿ƒåæ ‡y
+	double r;	//åœ†å½¢åŠå¾„
 };
 
-//¾ØĞÎ
+//çŸ©å½¢
 struct Box
 {
-	double x;	//¾ØĞÎÖĞĞÄ×ø±êx
-	double y;	//¾ØĞÎÖĞĞÄ×ø±êy
-	double width;	//¾ØĞÎ¿í£¨Ë®Æ½£©
-	double height;	//¾ØĞÎ¸ß£¨´¹Ö±£©
+	double x;	//çŸ©å½¢ä¸­å¿ƒåæ ‡x
+	double y;	//çŸ©å½¢ä¸­å¿ƒåæ ‡y
+	double width;	//çŸ©å½¢å®½ï¼ˆæ°´å¹³ï¼‰
+	double height;	//çŸ©å½¢é«˜ï¼ˆå‚ç›´ï¼‰
 };
 
-//Ïß¶Î
+//çº¿æ®µ
 struct Segment
 {
 	double x1,y1;
 	double x2,y2;
 };
 
-//ÉäÏß
+//å°„çº¿
 struct Beam
 {
-	//Æğµã(x,y)
+	//èµ·ç‚¹(x,y)
 	double x;
 	double y;
-	double rotation;	//½Ç¶È
+	double rotation;	//è§’åº¦
 
-	//ÖÕµã(x,y)
+	//ç»ˆç‚¹(x,y)
 	double ex,ey;
 };
 
 
 
-//ÕâÀïÊÇÒ»Ğ©¿ÉÄÜ»áÓÃµ½µÄº¯Êı
-//ÄãÍêÈ«¿ÉÒÔºöÂÔËüÃÇ£¬¶øÊ¹ÓÃ×Ô¼º±àĞ´µÄº¯Êı
-//Õâ²¿·ÖµÄº¯ÊıÌåÊµÏÖÔÚGlobalFunction.cppÖĞ
+//è¿™é‡Œæ˜¯ä¸€äº›å¯èƒ½ä¼šç”¨åˆ°çš„å‡½æ•°
+//ä½ å®Œå…¨å¯ä»¥å¿½ç•¥å®ƒä»¬ï¼Œè€Œä½¿ç”¨è‡ªå·±ç¼–å†™çš„å‡½æ•°
+//è¿™éƒ¨åˆ†çš„å‡½æ•°ä½“å®ç°åœ¨GlobalFunction.cppä¸­
 extern Point myRotate(double,double,double,double,bool);
 extern double AngleAdjust(double &);
 extern double AnglePlus(double,double);

@@ -1,20 +1,20 @@
 #include "struct.h"
 
 
-//ÕâÀïÊÇÒ»Ğ©¿ÉÄÜ»áÓÃµ½µÄº¯Êı
-//ÄãÍêÈ«¿ÉÒÔºöÂÔËüÃÇ£¬¶øÊ¹ÓÃ×Ô¼º±àĞ´µÄº¯Êı
+//è¿™é‡Œæ˜¯ä¸€äº›å¯èƒ½ä¼šç”¨åˆ°çš„å‡½æ•°
+//ä½ å®Œå…¨å¯ä»¥å¿½ç•¥å®ƒä»¬ï¼Œè€Œä½¿ç”¨è‡ªå·±ç¼–å†™çš„å‡½æ•°
 
 
 
 
 
-//Ğı×ªº¯Êı
-//ËµÃ÷£º·µ»ØĞı×ªºóµÄµã
-//²ÎÊı£ºx	...	xÖá×ø±ê
-//		y	...	yÖá×ø±ê
-//		s	...ÒªĞı×ª½Ç¶ÈµÄsinÖµ
-//		c	...ÒªĞı×ª½Ç¶ÈµÄcosÖµ
-//		re	...true=Ë³Ê±Õë£¬false=ÄæÊ±Õë
+//æ—‹è½¬å‡½æ•°
+//è¯´æ˜ï¼šè¿”å›æ—‹è½¬åçš„ç‚¹
+//å‚æ•°ï¼šx	...	xè½´åæ ‡
+//		y	...	yè½´åæ ‡
+//		s	...è¦æ—‹è½¬è§’åº¦çš„sinå€¼
+//		c	...è¦æ—‹è½¬è§’åº¦çš„coså€¼
+//		re	...true=é¡ºæ—¶é’ˆï¼Œfalse=é€†æ—¶é’ˆ
 Point myRotate(double x,double y,double s,double c,bool re)
 {
 	Point result;
@@ -33,9 +33,9 @@ Point myRotate(double x,double y,double s,double c,bool re)
 
 
 
-//½Ç¶È£¨¶ÈÊı£©µ÷Õû
-//ËµÃ÷£º·µ»Ø·¶Î§ÔÚ-180~180Ö®¼äµÄ½Ç¶ÈÊı
-//²ÎÊı£ºc	...	½Ç¶ÈÊı
+//è§’åº¦ï¼ˆåº¦æ•°ï¼‰è°ƒæ•´
+//è¯´æ˜ï¼šè¿”å›èŒƒå›´åœ¨-180~180ä¹‹é—´çš„è§’åº¦æ•°
+//å‚æ•°ï¼šc	...	è§’åº¦æ•°
 double AngleAdjust(double &c)
 {
 	while(c>180)
@@ -50,33 +50,33 @@ double AngleAdjust(double &c)
 }
 
 
-//½Ç¶È£¨¶ÈÊı£©Ïà¼Ó
-//ËµÃ÷£º·µ»ØĞı×ªºóµÄµã
+//è§’åº¦ï¼ˆåº¦æ•°ï¼‰ç›¸åŠ 
+//è¯´æ˜ï¼šè¿”å›æ—‹è½¬åçš„ç‚¹
 double AnglePlus(double a,double b)
 {
-	//½Ç¶ÈÏà¼Ó¼õ
+	//è§’åº¦ç›¸åŠ å‡
 	double c=a+b;
 	AngleAdjust(c);
 	return c;
 }
 
-//½Ç¶ÈÊı×ª»¡¶ÈÊıº¯Êı
+//è§’åº¦æ•°è½¬å¼§åº¦æ•°å‡½æ•°
 double AngleToRadian(double angle)
 {
-	//½Ç¶È×ª»¡¶È
+	//è§’åº¦è½¬å¼§åº¦
 	return angle/180*PI;
 }
 
-//»¡¶ÈÊı×ª½Ç¶ÈÊıº¯Êı
+//å¼§åº¦æ•°è½¬è§’åº¦æ•°å‡½æ•°
 double RadianToAngle(double radian)
 {
 	return radian/PI*180;
 }
 
-//Åö×²¼ì²â£ºÔ²ĞÎÓëµã
-//²ÎÊı£ºc	...	Ô²ĞÎ£¨½á¹¹Ìå£©
-//		x	...	xÖá×ø±ê
-//		y	...	yÖá×ø±ê
+//ç¢°æ’æ£€æµ‹ï¼šåœ†å½¢ä¸ç‚¹
+//å‚æ•°ï¼šc	...	åœ†å½¢ï¼ˆç»“æ„ä½“ï¼‰
+//		x	...	xè½´åæ ‡
+//		y	...	yè½´åæ ‡
 bool HitTestCirclePoint(const Circle &c,const double &x,const double &y)
 {
 	double dx=c.x-x,	dy=c.y-y;
@@ -90,9 +90,9 @@ bool HitTestCirclePoint(const Circle &c,const double &x,const double &y)
 	return (c.r*c.r>dis2);
 }
 
-//Åö×²¼ì²â£ºÔ²ĞÎÓëÔ²ĞÎ
-//²ÎÊı£ºc1	...	Ô²ĞÎ1£¨½á¹¹Ìå£©
-//		c2	...	Ô²ĞÎ2£¨½á¹¹Ìå£©
+//ç¢°æ’æ£€æµ‹ï¼šåœ†å½¢ä¸åœ†å½¢
+//å‚æ•°ï¼šc1	...	åœ†å½¢1ï¼ˆç»“æ„ä½“ï¼‰
+//		c2	...	åœ†å½¢2ï¼ˆç»“æ„ä½“ï¼‰
 bool HitTestCircles(const Circle &c1, const Circle &c2)
 {
 	double xx=c1.x-c2.x,	yy=c1.y-c2.y;
@@ -108,19 +108,19 @@ bool HitTestCircles(const Circle &c1, const Circle &c2)
 	return (rr*rr>=dis2);
 }
 
-//Åö×²¼ì²â£ºÉäÏßÓëÔ²ĞÎ
-//²ÎÊı£ºb	...	ÉäÏß£¨½á¹¹Ìå£©
-//		c	...	Ô²ĞÎ£¨½á¹¹Ìå£©
+//ç¢°æ’æ£€æµ‹ï¼šå°„çº¿ä¸åœ†å½¢
+//å‚æ•°ï¼šb	...	å°„çº¿ï¼ˆç»“æ„ä½“ï¼‰
+//		c	...	åœ†å½¢ï¼ˆç»“æ„ä½“ï¼‰
 bool HitTestBeamCircle(const Beam &b,const Circle &c)
 {
 	
 	double br=AngleToRadian(b.rotation);
 	double k=tan(br);
-	double g=k*c.x-c.y-k*b.x+b.y;	//Ö±ÏßÒ»°ãÊ½µÄÖµ
-	double d2=g*g/(k*k+1);			//Ô²ĞÄµ½Ö±Ïß¾àÀëÆ½·½
+	double g=k*c.x-c.y-k*b.x+b.y;	//ç›´çº¿ä¸€èˆ¬å¼çš„å€¼
+	double d2=g*g/(k*k+1);			//åœ†å¿ƒåˆ°ç›´çº¿è·ç¦»å¹³æ–¹
 	if(c.r*c.r>=d2)
 	{
-		//Ö±ÏßÓëÔ²ÒÑ¾­Ïà½»£¬ÏÂÃæÅĞ¶Ï·½Ïò
+		//ç›´çº¿ä¸åœ†å·²ç»ç›¸äº¤ï¼Œä¸‹é¢åˆ¤æ–­æ–¹å‘
 		double dy=c.y-b.y;
 		double ss=sin(br);
 		
@@ -135,30 +135,30 @@ bool HitTestBeamCircle(const Beam &b,const Circle &c)
 
 
 
-//»ñµÃÉäÏßÓëÔ²ĞÎÅö×²µã
-//²ÎÊı£ºb	...	ÉäÏß£¨½á¹¹Ìå£©
-//		c	...	Ô²ĞÎ£¨½á¹¹Ìå£©
+//è·å¾—å°„çº¿ä¸åœ†å½¢ç¢°æ’ç‚¹
+//å‚æ•°ï¼šb	...	å°„çº¿ï¼ˆç»“æ„ä½“ï¼‰
+//		c	...	åœ†å½¢ï¼ˆç»“æ„ä½“ï¼‰
 Point GetHitPoint(Beam b,Circle c)
 {
 	Point p;
 	p.x=0;
 	p.y=0;
 	
-	//ÔİÎ´¿¼ÂÇrotation=90µÄÇé¿ö
+	//æš‚æœªè€ƒè™‘rotation=90çš„æƒ…å†µ
 	double brr=AngleToRadian(b.rotation);
-	double k=tan(brr);//Ö±ÏßĞ±ÂÊ
-	double g=k*c.x-c.y-k*b.x+b.y;	//Ö±ÏßÒ»°ãÊ½µÄÖµ
-	double d=abs(g)/sqrt(k*k+1);			//Ô²ĞÄµ½Ö±Ïß¾àÀë
+	double k=tan(brr);//ç›´çº¿æ–œç‡
+	double g=k*c.x-c.y-k*b.x+b.y;	//ç›´çº¿ä¸€èˆ¬å¼çš„å€¼
+	double d=abs(g)/sqrt(k*k+1);			//åœ†å¿ƒåˆ°ç›´çº¿è·ç¦»
 	
-	double rr=AnglePlus(b.rotation,90);		//´¹Ïß½Ç¶È
+	double rr=AnglePlus(b.rotation,90);		//å‚çº¿è§’åº¦
 	double rrr=AngleToRadian(rr);
 	
-	double gap=sqrt(c.r*c.r-d*d);	//ÉäÏßÉÏ»¬¶¯¾àÀë
+	double gap=sqrt(c.r*c.r-d*d);	//å°„çº¿ä¸Šæ»‘åŠ¨è·ç¦»
 
 	double sign;
 	if(g>0)
 	{
-		//yÏµÊıÎª¸º£¬g>0Ô²ĞÄÔÚÖ±ÏßÏÂ·½£¬ÍùÉÏÒÆ
+		//yç³»æ•°ä¸ºè´Ÿï¼Œg>0åœ†å¿ƒåœ¨ç›´çº¿ä¸‹æ–¹ï¼Œå¾€ä¸Šç§»
 		sign=1;
 	}
 	else
@@ -167,7 +167,7 @@ Point GetHitPoint(Beam b,Circle c)
 	}
 
 
-	//´¹×ã×ø±ê
+	//å‚è¶³åæ ‡
 	double xc=c.x+sign*d*cos(rrr);
 	double yc=c.y+sign*d*sin(rrr);
 
@@ -200,8 +200,8 @@ Point GetHitPoint(Beam b,Circle c)
 		}
 	}
 
-	//1.Ê×ÏÈÕÒcµÄÔ²ĞÄ×÷bµÄ´¹ÏßÓëbµÄ½»µã
-	//2.¹´¹É¶¨ÀíËã³öÁíÒ»Ö±½Ç±ß³¤¶È
+	//1.é¦–å…ˆæ‰¾cçš„åœ†å¿ƒä½œbçš„å‚çº¿ä¸bçš„äº¤ç‚¹
+	//2.å‹¾è‚¡å®šç†ç®—å‡ºå¦ä¸€ç›´è§’è¾¹é•¿åº¦
 
 
 	return p;
@@ -209,16 +209,16 @@ Point GetHitPoint(Beam b,Circle c)
 
 
 
-//Ëæ»úÊı²¥ÖÖ£¨ÓÃÊ±¼ä£©
+//éšæœºæ•°æ’­ç§ï¼ˆç”¨æ—¶é—´ï¼‰
 void SetSeed()
 {
 	srand( (unsigned)time( 0 )+7); 
 }
 
 
-//²úÉú0-1µÄËæ»úÊıµÄº¯Êı
+//äº§ç”Ÿ0-1çš„éšæœºæ•°çš„å‡½æ•°
 double Random0_1(){
-	//²úÉú0-1µÄËæ»úÊıµÄº¯Êı
+	//äº§ç”Ÿ0-1çš„éšæœºæ•°çš„å‡½æ•°
 	int temp;
 	double r;
 	temp=rand()%1000;
@@ -228,7 +228,7 @@ double Random0_1(){
 
 
 
-//²úÉú[minv,maxv]Ö®¼äÕûÊıµÄËæ»úº¯Êı
+//äº§ç”Ÿ[minv,maxv]ä¹‹é—´æ•´æ•°çš„éšæœºå‡½æ•°
 int Random(int minv,int maxv)
 {
 	int gap=maxv-minv;

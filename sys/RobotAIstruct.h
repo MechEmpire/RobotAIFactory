@@ -1,5 +1,5 @@
 //--------------------------------------
-//ÕâÀïÃæµÄ´úÂë¿´¿´¾ÍĞĞ£¬±ğÂÒ¶¯°¡~~~
+//è¿™é‡Œé¢çš„ä»£ç çœ‹çœ‹å°±è¡Œï¼Œåˆ«ä¹±åŠ¨å•Š~~~
 //--------------------------------------
 
 
@@ -25,7 +25,7 @@ enum weapontypename
 	,WT_MissileLauncher
 	,WT_ElectricSaw
 
-	//¶şÆÚ
+	//äºŒæœŸ
 	,WT_GrenadeThrower
 };
 
@@ -49,12 +49,12 @@ enum bullettypename
 	,BT_TrackingMissile
 	,BT_ElectricSaw
 	
-	//ÔÚÕâÀïÌí¼ÓÓÎÏ·Íæ¼Ò¿É¼û(Ó¦¸ÃÊÇÎäÆ÷Ö±½Ó·¢ÉäµÄ)ÀàĞÍ
+	//åœ¨è¿™é‡Œæ·»åŠ æ¸¸æˆç©å®¶å¯è§(åº”è¯¥æ˜¯æ­¦å™¨ç›´æ¥å‘å°„çš„)ç±»å‹
 	,BT_Grenade
 	
 
 
-	//ÒÔÏÂÊÇ¹¦ÄÜĞÔµÄÀàĞÍ
+	//ä»¥ä¸‹æ˜¯åŠŸèƒ½æ€§çš„ç±»å‹
 	
 	,BT_NULL
 };
@@ -62,86 +62,86 @@ enum bullettypename
 
 struct RobotAI_Order
 {
-	//ÓÃÓÚRobotAIÖĞUpdate(..)·½·¨µÄ¶Ô»úÆ÷ÈËÏÂ´ïµÄ²Ù×÷ÃüÁî
-	int fire;	//¿ØÖÆÎäÆ÷¿ª»ğÓë·ñ
-	int wturn;	//¿ØÖÆÎäÆ÷Ğı×ªÓë·ñ
-	int run;	//ÒıÇæ²Ù×İÂëÖ®Ò»£¬Ó°ÏìËÙ¶È£¬¾ßÌå¹¦ÄÜÒòËùÑ¡ÒıÇæ¶øÒì
-	int eturn;	//ÒıÇæ²Ù×İÂëÖ®Ò»£¬Ó°ÏìĞı×ª£¬¾ßÌå¹¦ÄÜÒòËùÑ¡ÒıÇæ¶øÒì
+	//ç”¨äºRobotAIä¸­Update(..)æ–¹æ³•çš„å¯¹æœºå™¨äººä¸‹è¾¾çš„æ“ä½œå‘½ä»¤
+	int fire;	//æ§åˆ¶æ­¦å™¨å¼€ç«ä¸å¦
+	int wturn;	//æ§åˆ¶æ­¦å™¨æ—‹è½¬ä¸å¦
+	int run;	//å¼•æ“æ“çºµç ä¹‹ä¸€ï¼Œå½±å“é€Ÿåº¦ï¼Œå…·ä½“åŠŸèƒ½å› æ‰€é€‰å¼•æ“è€Œå¼‚
+	int eturn;	//å¼•æ“æ“çºµç ä¹‹ä¸€ï¼Œå½±å“æ—‹è½¬ï¼Œå…·ä½“åŠŸèƒ½å› æ‰€é€‰å¼•æ“è€Œå¼‚
 
 	RobotAI_Order(){fire=0;wturn=0;run=0;eturn=0;}
 };
 
 
-//Ò»¸ö»ú¼×µÄĞÅÏ¢µÄ½á¹¹Ìå
+//ä¸€ä¸ªæœºç”²çš„ä¿¡æ¯çš„ç»“æ„ä½“
 struct RobotAI_RobotInformation
 {
-	int entityID;	//Õâ¸ö²»ÓÃ¹ÜÀ²
+	int entityID;	//è¿™ä¸ªä¸ç”¨ç®¡å•¦
 
-	int id;		//Battlefield.pRobotµÄÏÂ±ê £¨myID¾ÍÊÇÕâ¸ö£©
+	int id;		//Battlefield.pRobotçš„ä¸‹æ ‡ ï¼ˆmyIDå°±æ˜¯è¿™ä¸ªï¼‰
 
-	weapontypename weaponTypeName;	//ÎäÆ÷ÖÖÀà£¨Ã¶¾ÙÀàĞÍ£©
-	enginetypename engineTypeName;	//ÒıÇæÖÖÀà£¨Ã¶¾ÙÀàĞÍ£©
+	weapontypename weaponTypeName;	//æ­¦å™¨ç§ç±»ï¼ˆæšä¸¾ç±»å‹ï¼‰
+	enginetypename engineTypeName;	//å¼•æ“ç§ç±»ï¼ˆæšä¸¾ç±»å‹ï¼‰
 
-	//»ú¼×µ±Ç°µÄĞÅÏ¢
-	Circle circle;		//ÒıÇæµÄÔ²ĞÎ(½á¹¹Ìå:x,y,radium)
-	double engineRotation;	//ÒıÇæµ±Ç°½Ç¶È£¬ÓëxÖáÕı·½Ïò¼Ğ½Ç
-	double weaponRotation;	//ÎäÆ÷µ±Ç°½Ç¶È£¬ÓëxÖáÕı·½Ïò¼Ğ½Ç
-	double vx,vy,vr;	//xÖáÍ¶Ó°ËÙ¶È£¬yÖáÍ¶Ó°ËÙ¶È£¬Ğı×ª½ÇËÙ¶È
+	//æœºç”²å½“å‰çš„ä¿¡æ¯
+	Circle circle;		//å¼•æ“çš„åœ†å½¢(ç»“æ„ä½“:x,y,radium)
+	double engineRotation;	//å¼•æ“å½“å‰è§’åº¦ï¼Œä¸xè½´æ­£æ–¹å‘å¤¹è§’
+	double weaponRotation;	//æ­¦å™¨å½“å‰è§’åº¦ï¼Œä¸xè½´æ­£æ–¹å‘å¤¹è§’
+	double vx,vy,vr;	//xè½´æŠ•å½±é€Ÿåº¦ï¼Œyè½´æŠ•å½±é€Ÿåº¦ï¼Œæ—‹è½¬è§’é€Ÿåº¦
 	
-	int hp;				//»ú¼×µ±Ç°Ê£ÓàÉúÃüÖµ
+	int hp;				//æœºç”²å½“å‰å‰©ä½™ç”Ÿå‘½å€¼
 
 
-	int remainingAmmo;		//»ú¼×µ±Ç°Ê£Óàµ¯Ò©Á¿
-	int cooling;			//»ú¼×ÎäÆ÷µ±Ç°Ê£ÓàÀäÈ´Ê±¼ä
+	int remainingAmmo;		//æœºç”²å½“å‰å‰©ä½™å¼¹è¯é‡
+	int cooling;			//æœºç”²æ­¦å™¨å½“å‰å‰©ä½™å†·å´æ—¶é—´
 
 };
 
 
-//Ò»¸ö×Óµ¯µÄĞÅÏ¢µÄ½á¹¹Ìå
+//ä¸€ä¸ªå­å¼¹çš„ä¿¡æ¯çš„ç»“æ„ä½“
 struct RobotAI_BulletInformation
 {
-	int entityID;	//Õâ¸ö²»ÓÃ¹ÜÀ²
+	int entityID;	//è¿™ä¸ªä¸ç”¨ç®¡å•¦
 
-	bullettypename type;		//×Óµ¯ÖÖÀà£¨Ã¶¾ÙÀàĞÍ£©
+	bullettypename type;		//å­å¼¹ç§ç±»ï¼ˆæšä¸¾ç±»å‹ï¼‰
 
-	Circle circle;		//×Óµ¯µÄÔ²ĞÎ(½á¹¹Ìå£ºx,y,radium)
-	double rotation;	//ÒıÇæ½Ç¶È
-	double vx,vy,vr;	//xÖáÍ¶Ó°ËÙ¶È£¬yÖáÍ¶Ó°ËÙ¶È£¬Ğı×ª½ÇËÙ¶È
+	Circle circle;		//å­å¼¹çš„åœ†å½¢(ç»“æ„ä½“ï¼šx,y,radium)
+	double rotation;	//å¼•æ“è§’åº¦
+	double vx,vy,vr;	//xè½´æŠ•å½±é€Ÿåº¦ï¼Œyè½´æŠ•å½±é€Ÿåº¦ï¼Œæ—‹è½¬è§’é€Ÿåº¦
 };
 
-//Ò»¸ö¾ü»ğ¿âµÄĞÅÏ¢µÄ½á¹¹Ìå
+//ä¸€ä¸ªå†›ç«åº“çš„ä¿¡æ¯çš„ç»“æ„ä½“
 struct RobotAI_ArsenalInformation
 {
-	Circle circle;	//¾ü»ğ¿âµÄÔ²ĞÎ(½á¹¹Ìå£ºx,y,radium)
-	int respawning_time;	//µ±Ç°Ê£ÓàÖØĞÂ¼¤»îÊ±¼ä
+	Circle circle;	//å†›ç«åº“çš„åœ†å½¢(ç»“æ„ä½“ï¼šx,y,radium)
+	int respawning_time;	//å½“å‰å‰©ä½™é‡æ–°æ¿€æ´»æ—¶é—´
 };
 
 
-//Ã¿Ö¡µÄÕ½³¡×ÜĞÅÏ¢½á¹¹Ìå
+//æ¯å¸§çš„æˆ˜åœºæ€»ä¿¡æ¯ç»“æ„ä½“
 struct RobotAI_BattlefieldInformation
 {
-	//Ê¹ÓÃ×î»ù±¾µÄÊı×é´æ´¢
+	//ä½¿ç”¨æœ€åŸºæœ¬çš„æ•°ç»„å­˜å‚¨
 
-	int num_robot;	//»ú¼×ÊıÁ¿£¨°üÀ¨ÒÑ¾­¹ÒÁËµÄ£©
+	int num_robot;	//æœºç”²æ•°é‡ï¼ˆåŒ…æ‹¬å·²ç»æŒ‚äº†çš„ï¼‰
 
 	RobotAI_RobotInformation robotInformation[Info_MaxRobots];
 
 
-	int num_bullet;	//µ±Ç°×Óµ¯ÊıÁ¿£¨±ãÓÚÑ­»··ÃÎÊÓÚºÎÊ±ÖÕÖ¹£©
+	int num_bullet;	//å½“å‰å­å¼¹æ•°é‡ï¼ˆä¾¿äºå¾ªç¯è®¿é—®äºä½•æ—¶ç»ˆæ­¢ï¼‰
 
 	RobotAI_BulletInformation bulletInformation[Info_MaxBullets];
 
 	
-	int num_obstacle;	//µØÍ¼ÉÏµÄÕÏ°­ÎïÊıÁ¿£¨±ãÓÚÑ­»··ÃÎÊÓÚºÎÊ±ÖÕÖ¹£©
+	int num_obstacle;	//åœ°å›¾ä¸Šçš„éšœç¢ç‰©æ•°é‡ï¼ˆä¾¿äºå¾ªç¯è®¿é—®äºä½•æ—¶ç»ˆæ­¢ï¼‰
 
 	Circle obstacle[Info_MaxObstacles];
 
 	
-	int num_arsenal;	//µØÍ¼ÉÏµÄ¾ü»ğ¿âÊıÁ¿£¨±ãÓÚÑ­»··ÃÎÊÓÚºÎÊ±ÖÕÖ¹£©
+	int num_arsenal;	//åœ°å›¾ä¸Šçš„å†›ç«åº“æ•°é‡ï¼ˆä¾¿äºå¾ªç¯è®¿é—®äºä½•æ—¶ç»ˆæ­¢ï¼‰
 
 	RobotAI_ArsenalInformation arsenal[Info_MaxArsenals];
 
 
 	
-	Box boundary;		//Õ½³¡±ß½ç£¬Box½á¹¹Ìå
+	Box boundary;		//æˆ˜åœºè¾¹ç•Œï¼ŒBoxç»“æ„ä½“
 };

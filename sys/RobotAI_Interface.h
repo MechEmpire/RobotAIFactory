@@ -37,24 +37,24 @@ typedef double (*FP_GET_DOUBLE_B)(bullettypename);
 #define get_bullet_damage (*getBulletDamage)
 
 
-//½Ó¿Ú
+//æ¥å£
 class RobotAI_Interface
 {
 public:
 	virtual ~RobotAI_Interface(){};
 
 
-	//±ØĞëÍê³ÉµÄ·½·¨
-	//Ã¿¸ö»ØºÏ£¨Ö¡£©µÄ²Ù×İ·½·¨
+	//å¿…é¡»å®Œæˆçš„æ–¹æ³•
+	//æ¯ä¸ªå›åˆï¼ˆå¸§ï¼‰çš„æ“çºµæ–¹æ³•
 	virtual void Update(RobotAI_Order& , const RobotAI_BattlefieldInformation&, int)=0;
-	//Ñ¡Ôñ×°±¸·½·¨£¨ÔØÈëÊ±µ÷ÓÃ£¬½øÈë¾ü»ğ¿âµ÷ÓÃ£©
+	//é€‰æ‹©è£…å¤‡æ–¹æ³•ï¼ˆè½½å…¥æ—¶è°ƒç”¨ï¼Œè¿›å…¥å†›ç«åº“è°ƒç”¨ï¼‰
 	virtual void ChooseArmor(weapontypename&,enginetypename&,bool)=0;
 	
 
 	virtual string GetName()=0;
 	virtual string GetAuthor()=0;
 
-	//ÑÕÉ«ÑùÊ½¸Ä±äÆ÷
+	//é¢œè‰²æ ·å¼æ”¹å˜å™¨
 	virtual int GetWeaponRed()=0;
 	virtual int GetWeaponGreen()=0;
 	virtual int GetWeaponBlue()=0;
@@ -65,13 +65,13 @@ public:
 	///////////////////////////////////////
 
 
-	//¿É¹©Ñ¡ÔñµÄ¹¦ÄÜ·½·¨
-	//virtual string trace()=0;		//Êä³öµ÷ÊÔĞÅÏ¢º¯Êı(ÕâÖÖ·½Ê½²»·½±ã£¬ÕùÈ¡×ö³É¸öÊ²Ã´º¯ÊıÖ¸ÕëÉ¶µÄ)
-	//void (*trace)(string);			//Êä³öµ÷ÊÔĞÅÏ¢º¯ÊıÖ¸Õë
-	FP_TRACE trace;					//Êä³öµ÷ÊÔĞÅÏ¢º¯ÊıÖ¸Õë
-									//µ÷ÓÃÊ±	(*trace)("info needed to be print")
+	//å¯ä¾›é€‰æ‹©çš„åŠŸèƒ½æ–¹æ³•
+	//virtual string trace()=0;		//è¾“å‡ºè°ƒè¯•ä¿¡æ¯å‡½æ•°(è¿™ç§æ–¹å¼ä¸æ–¹ä¾¿ï¼Œäº‰å–åšæˆä¸ªä»€ä¹ˆå‡½æ•°æŒ‡é’ˆå•¥çš„)
+	//void (*trace)(string);			//è¾“å‡ºè°ƒè¯•ä¿¡æ¯å‡½æ•°æŒ‡é’ˆ
+	FP_TRACE trace;					//è¾“å‡ºè°ƒè¯•ä¿¡æ¯å‡½æ•°æŒ‡é’ˆ
+									//è°ƒç”¨æ—¶	(*trace)("info needed to be print")
 
-									//¸³ÖµÊ±£ºÈ«¾Öº¯Êı	trace=trace_global;
+									//èµ‹å€¼æ—¶ï¼šå…¨å±€å‡½æ•°	trace=trace_global;
 	//StaticDataGetter
 	//weapon
 	FP_GET_STRING_W getWeaponName;
@@ -94,10 +94,10 @@ public:
 
 
 	//Trigger Function
-	virtual void onBattleStart(const RobotAI_BattlefieldInformation&,int)=0;		//Ò»³¡Õ½¶·¿ªÊ¼Ê±±»µ÷ÓÃ
-	virtual void onBattleEnd(const RobotAI_BattlefieldInformation&,int)=0;			//Ò»³¡Õ½¶·½áÊøÊ±±»µ÷ÓÃ
+	virtual void onBattleStart(const RobotAI_BattlefieldInformation&,int)=0;		//ä¸€åœºæˆ˜æ–—å¼€å§‹æ—¶è¢«è°ƒç”¨
+	virtual void onBattleEnd(const RobotAI_BattlefieldInformation&,int)=0;			//ä¸€åœºæˆ˜æ–—ç»“æŸæ—¶è¢«è°ƒç”¨
 
 	
 	virtual void onSomeoneFire(int)=0;
-	virtual void onHit(int,bullettypename)=0;		//±»»÷ÖĞÊ±µ÷ÓÃ
+	virtual void onHit(int,bullettypename)=0;		//è¢«å‡»ä¸­æ—¶è°ƒç”¨
 };

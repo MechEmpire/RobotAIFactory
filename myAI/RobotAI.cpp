@@ -13,18 +13,18 @@ RobotAI::~RobotAI()
 
 
 //-----------------------------------------------------
-//1.±ØÐëÍê³ÉµÄÕ½¶·ºËÐÄ
+//1.å¿…é¡»å®Œæˆçš„æˆ˜æ–—æ ¸å¿ƒ
 //-----------------------------------------------------
 
 
 void RobotAI::Update(RobotAI_Order& order,const RobotAI_BattlefieldInformation& info,int myID)
 {
-	//Ö¡²Ù×Ýº¯Êý
-	//¹¦ÄÜ£ºÔÚÃ¿Ò»Ö¡±»µ÷ÓÃ£¬Íê³ÉÄãµÄ»ú¼×ÔÚÕâÒ»Ö¡µÄ¶¯×÷¾ö²ß
-	//²ÎÊý£ºorder	...	»ú¼×²Ù×ÝÖ¸Áî£¬ÄãÔÚº¯ÊýÌåÖÐ¸øËü¸³ÖµÒÔ²Ù×Ý»ú¼×ÔÚÕâÒ»Ö¡µÄÐÐÎª
-	//		info	...	Õ½³¡ÐÅÏ¢
-	//		myID	... ×Ô¼º»ú¼×ÔÚinfoÖÐrobotÊý×é¶ÔÓ¦µÄÏÂ±ê
-	//		(Õâ¼¸¸ö²ÎÊýµÄÏêÏ¸ËµÃ÷ÔÚ¿ª·¢ÊÖ²á¿ÉÒÔÕÒµ½£¬ÄãÒ²¿ÉÒÔÔÚRobotAIstruct.hÖÐÖ±½ÓÕÒµ½ËüÃÇµÄ´úÂë)
+	//å¸§æ“çºµå‡½æ•°
+	//åŠŸèƒ½ï¼šåœ¨æ¯ä¸€å¸§è¢«è°ƒç”¨ï¼Œå®Œæˆä½ çš„æœºç”²åœ¨è¿™ä¸€å¸§çš„åŠ¨ä½œå†³ç­–
+	//å‚æ•°ï¼šorder	...	æœºç”²æ“çºµæŒ‡ä»¤ï¼Œä½ åœ¨å‡½æ•°ä½“ä¸­ç»™å®ƒèµ‹å€¼ä»¥æ“çºµæœºç”²åœ¨è¿™ä¸€å¸§çš„è¡Œä¸º
+	//		info	...	æˆ˜åœºä¿¡æ¯
+	//		myID	... è‡ªå·±æœºç”²åœ¨infoä¸­robotæ•°ç»„å¯¹åº”çš„ä¸‹æ ‡
+	//		(è¿™å‡ ä¸ªå‚æ•°çš„è¯¦ç»†è¯´æ˜Žåœ¨å¼€å‘æ‰‹å†Œå¯ä»¥æ‰¾åˆ°ï¼Œä½ ä¹Ÿå¯ä»¥åœ¨RobotAIstruct.hä¸­ç›´æŽ¥æ‰¾åˆ°å®ƒä»¬çš„ä»£ç )
 	
 
 }
@@ -33,16 +33,16 @@ void RobotAI::Update(RobotAI_Order& order,const RobotAI_BattlefieldInformation& 
 
 void RobotAI::ChooseArmor(weapontypename& weapon,enginetypename& engine,bool a)
 {
-	//ÌôÑ¡×°±¸º¯Êý
-	//¹¦ÄÜ£ºÔÚÕ½¶·¿ªÊ¼Ê±ÎªÄãµÄ»ú¼×Ñ¡ÔñºÏÊÊµÄÎäÆ÷ÅÚËþºÍÒýÇæÔØ¾ß
-	//²ÎÊý£ºweapon	...	´ú±íÄãÑ¡ÔñµÄÎäÆ÷£¬ÔÚº¯ÊýÌåÖÐ¸øËü¸³Öµ
-	//		engine	...	´ú±íÄãÑ¡ÔñµÄÒýÇæ£¬ÔÚº¯ÊýÌåÖÐ¸øËü¸³Öµ
-	//tip:	À¨ºÅÀïµÄ²ÎÊýÊÇÃ¶¾ÙÀàÐÍ weapontypename »ò enginetypename
-	//		¿ª·¢ÎÄµµÖÐÓÐÏêÏ¸ËµÃ÷£¬ÄãÒ²¿ÉÒÔÔÚRobotAIstruct.hÖÐÖ±½ÓÕÒµ½ËüÃÇµÄ´úÂë
-	//tip:	×îºóÒ»¸öboolÊÇÃ»ÓÃµÄ¡£¡£ÄÇÊÇÒ»¸öÍË»¯µÄÆ÷¹Ù
+	//æŒ‘é€‰è£…å¤‡å‡½æ•°
+	//åŠŸèƒ½ï¼šåœ¨æˆ˜æ–—å¼€å§‹æ—¶ä¸ºä½ çš„æœºç”²é€‰æ‹©åˆé€‚çš„æ­¦å™¨ç‚®å¡”å’Œå¼•æ“Žè½½å…·
+	//å‚æ•°ï¼šweapon	...	ä»£è¡¨ä½ é€‰æ‹©çš„æ­¦å™¨ï¼Œåœ¨å‡½æ•°ä½“ä¸­ç»™å®ƒèµ‹å€¼
+	//		engine	...	ä»£è¡¨ä½ é€‰æ‹©çš„å¼•æ“Žï¼Œåœ¨å‡½æ•°ä½“ä¸­ç»™å®ƒèµ‹å€¼
+	//tip:	æ‹¬å·é‡Œçš„å‚æ•°æ˜¯æžšä¸¾ç±»åž‹ weapontypename æˆ– enginetypename
+	//		å¼€å‘æ–‡æ¡£ä¸­æœ‰è¯¦ç»†è¯´æ˜Žï¼Œä½ ä¹Ÿå¯ä»¥åœ¨RobotAIstruct.hä¸­ç›´æŽ¥æ‰¾åˆ°å®ƒä»¬çš„ä»£ç 
+	//tip:	æœ€åŽä¸€ä¸ªboolæ˜¯æ²¡ç”¨çš„ã€‚ã€‚é‚£æ˜¯ä¸€ä¸ªé€€åŒ–çš„å™¨å®˜
 
-	weapon=WT_Cannon;	//°¡£¬ÎÒ°®¼ÓÅ©ÅÚ
-	engine=ET_Spider;	//°¡£¬ÎÒ°®Ð¡Ö©Öë
+	weapon=WT_Cannon;	//å•Šï¼Œæˆ‘çˆ±åŠ å†œç‚®
+	engine=ET_Spider;	//å•Šï¼Œæˆ‘çˆ±å°èœ˜è››
 }
 
 
@@ -56,60 +56,60 @@ void RobotAI::ChooseArmor(weapontypename& weapon,enginetypename& engine,bool a)
 
 
 //-----------------------------------------------------
-//2.¸öÐÔÐÅÏ¢
+//2.ä¸ªæ€§ä¿¡æ¯
 //-----------------------------------------------------
 
 
 string RobotAI::GetName()
 {
-	//·µ»ØÄãµÄ»ú¼×µÄÃû×Ö
-	return "µ°ÌÛµÄÖ©Öë";
+	//è¿”å›žä½ çš„æœºç”²çš„åå­—
+	return "è›‹ç–¼çš„èœ˜è››";
 }
 
 string RobotAI::GetAuthor()
 {
-	//·µ»Ø»ú¼×ÖÆ×÷ÈË»òÍÅ¶ÓµÄÃû×Ö
-	return "µÒÑ§³¤";
+	//è¿”å›žæœºç”²åˆ¶ä½œäººæˆ–å›¢é˜Ÿçš„åå­—
+	return "ç‹„å­¦é•¿";
 }
 
 
 
 
-//·µ»ØÒ»¸ö(-255,255)Ö®¼äµÄ»ú¼×ÎäÆ÷ÅÚËþµÄÑÕÉ«Æ«ÒÆÖµ£¨ºì¡¢ÂÌ¡¢À¶£©
-//Äã¿ÉÒÔÔÚflash¿Í»§¶ËµÄ²ÎÊýÔ¤ÀÀÖÐÔ¤ÀÀÑÕÉ«´îÅäµÄÐ§¹û
+//è¿”å›žä¸€ä¸ª(-255,255)ä¹‹é—´çš„æœºç”²æ­¦å™¨ç‚®å¡”çš„é¢œè‰²åç§»å€¼ï¼ˆçº¢ã€ç»¿ã€è“ï¼‰
+//ä½ å¯ä»¥åœ¨flashå®¢æˆ·ç«¯çš„å‚æ•°é¢„è§ˆä¸­é¢„è§ˆé¢œè‰²æ­é…çš„æ•ˆæžœ
 int RobotAI::GetWeaponRed()
 {
-	//·µ»ØÒ»¸ö-255-255Ö®¼äµÄÕûÊý,´ú±íÎäÆ÷ºìÉ«µÄÆ«ÒÆÖµ
+	//è¿”å›žä¸€ä¸ª-255-255ä¹‹é—´çš„æ•´æ•°,ä»£è¡¨æ­¦å™¨çº¢è‰²çš„åç§»å€¼
 	return -50;
 }
 int RobotAI::GetWeaponGreen()
 {
-	//·µ»ØÒ»¸ö-255-255Ö®¼äµÄÕûÊý,´ú±íÎäÆ÷ÂÌÉ«µÄÆ«ÒÆÖµ
+	//è¿”å›žä¸€ä¸ª-255-255ä¹‹é—´çš„æ•´æ•°,ä»£è¡¨æ­¦å™¨ç»¿è‰²çš„åç§»å€¼
 	return -50;
 }
 int RobotAI::GetWeaponBlue()
 {
-	//·µ»ØÒ»¸ö-255-255Ö®¼äµÄÕûÊý,´ú±íÎäÆ÷À¶É«µÄÆ«ÒÆÖµ
+	//è¿”å›žä¸€ä¸ª-255-255ä¹‹é—´çš„æ•´æ•°,ä»£è¡¨æ­¦å™¨è“è‰²çš„åç§»å€¼
 	return -50;
 }
 
 
 
-//·µ»ØÒ»¸ö(-255,255)Ö®¼äµÄ»ú¼×ÒýÇæÔØ¾ßµÄÑÕÉ«Æ«ÒÆÖµ£¨ºì¡¢ÂÌ¡¢À¶£©
-//Äã¿ÉÒÔÔÚflash¿Í»§¶ËµÄ²ÎÊýÔ¤ÀÀÖÐÔ¤ÀÀÑÕÉ«´îÅäµÄÐ§¹û
+//è¿”å›žä¸€ä¸ª(-255,255)ä¹‹é—´çš„æœºç”²å¼•æ“Žè½½å…·çš„é¢œè‰²åç§»å€¼ï¼ˆçº¢ã€ç»¿ã€è“ï¼‰
+//ä½ å¯ä»¥åœ¨flashå®¢æˆ·ç«¯çš„å‚æ•°é¢„è§ˆä¸­é¢„è§ˆé¢œè‰²æ­é…çš„æ•ˆæžœ
 int RobotAI::GetEngineRed()
 {
-	//·µ»ØÒ»¸ö-255-255Ö®¼äµÄÊý,´ú±íÔØ¾ßºìÉ«µÄÆ«ÒÆÖµ
+	//è¿”å›žä¸€ä¸ª-255-255ä¹‹é—´çš„æ•°,ä»£è¡¨è½½å…·çº¢è‰²çš„åç§»å€¼
 	return -50;
 }
 int RobotAI::GetEngineGreen()
 {
-	//·µ»ØÒ»¸ö-255-255Ö®¼äµÄÕûÊý,´ú±íÔØ¾ßÂÌÉ«µÄÆ«ÒÆÖµ
+	//è¿”å›žä¸€ä¸ª-255-255ä¹‹é—´çš„æ•´æ•°,ä»£è¡¨è½½å…·ç»¿è‰²çš„åç§»å€¼
 	return -50;
 }
 int RobotAI::GetEngineBlue()
 {
-	//·µ»ØÒ»¸ö-255-255Ö®¼äµÄÕûÊý,´ú±íÔØ¾ßÀ¶É«µÄÆ«ÒÆÖµ
+	//è¿”å›žä¸€ä¸ª-255-255ä¹‹é—´çš„æ•´æ•°,ä»£è¡¨è½½å…·è“è‰²çš„åç§»å€¼
 	return -50;
 }
 
@@ -122,39 +122,39 @@ int RobotAI::GetEngineBlue()
 
 
 //-----------------------------------------------------
-//3.ÓÃ²»ÓÃËæÄãµÄ´¥·¢º¯Êý
+//3.ç”¨ä¸ç”¨éšä½ çš„è§¦å‘å‡½æ•°
 //-----------------------------------------------------
 
 
 void RobotAI::onBattleStart(const RobotAI_BattlefieldInformation& info,int myID)
 {
-	//Ò»³¡Õ½¶·¿ªÊ¼Ê±±»µ÷ÓÃ£¬¿ÉÄÜ¿ÉÒÔÓÃÀ´³õÊ¼»¯
-	//²ÎÊý£ºinfo	...	Õ½³¡ÐÅÏ¢
-	//		myID	... ×Ô¼º»ú¼×ÔÚinfoÖÐrobotÊý×é¶ÔÓ¦µÄÏÂ±ê
+	//ä¸€åœºæˆ˜æ–—å¼€å§‹æ—¶è¢«è°ƒç”¨ï¼Œå¯èƒ½å¯ä»¥ç”¨æ¥åˆå§‹åŒ–
+	//å‚æ•°ï¼šinfo	...	æˆ˜åœºä¿¡æ¯
+	//		myID	... è‡ªå·±æœºç”²åœ¨infoä¸­robotæ•°ç»„å¯¹åº”çš„ä¸‹æ ‡
 
 }
 
 void RobotAI::onBattleEnd(const RobotAI_BattlefieldInformation& info,int myID)
 {
-	//Ò»³¡Õ½¶·½áÊøÊ±±»µ÷ÓÃ£¬¿ÉÄÜ¿ÉÒÔÓÃÀ´Îö¹¹Äã¶¯Ì¬·ÖÅäµÄÄÚ´æ¿Õ¼ä£¨Èç¹ûÄãÓÃÁËµÄ»°£©
-	//²ÎÊý£ºinfo	...	Õ½³¡ÐÅÏ¢
-	//		myID	... ×Ô¼º»ú¼×ÔÚinfoÖÐrobotÊý×é¶ÔÓ¦µÄÏÂ±ê
+	//ä¸€åœºæˆ˜æ–—ç»“æŸæ—¶è¢«è°ƒç”¨ï¼Œå¯èƒ½å¯ä»¥ç”¨æ¥æžæž„ä½ åŠ¨æ€åˆ†é…çš„å†…å­˜ç©ºé—´ï¼ˆå¦‚æžœä½ ç”¨äº†çš„è¯ï¼‰
+	//å‚æ•°ï¼šinfo	...	æˆ˜åœºä¿¡æ¯
+	//		myID	... è‡ªå·±æœºç”²åœ¨infoä¸­robotæ•°ç»„å¯¹åº”çš„ä¸‹æ ‡
 }
 
 
 void RobotAI::onSomeoneFire(int fireID)
 {
-	//ÓÐ»ú¼×¿ª»ðÊ±±»µ÷ÓÃ
-	//²ÎÊý£ºfireID	... ¿ª»ðµÄ»ú¼×ÏÂ±ê
+	//æœ‰æœºç”²å¼€ç«æ—¶è¢«è°ƒç”¨
+	//å‚æ•°ï¼šfireID	... å¼€ç«çš„æœºç”²ä¸‹æ ‡
 }
 
 
 void RobotAI::onHit(int launcherID,bullettypename btn)
 {
-	//±»×Óµ¯»÷ÖÐÊ±±»µ÷ÓÃ
-	//²ÎÊý£ºbtn	...	»÷ÖÐÄãµÄ×Óµ¯ÖÖÀà£¨Ã¶¾ÙÀàÐÍ£©
+	//è¢«å­å¼¹å‡»ä¸­æ—¶è¢«è°ƒç”¨
+	//å‚æ•°ï¼šbtn	...	å‡»ä¸­ä½ çš„å­å¼¹ç§ç±»ï¼ˆæžšä¸¾ç±»åž‹ï¼‰
 }
 
 
 
-//TODO:ÕâÀï¿ÉÒÔÊµÏÖÄã×Ô¼ºµÄº¯Êý
+//TODO:è¿™é‡Œå¯ä»¥å®žçŽ°ä½ è‡ªå·±çš„å‡½æ•°

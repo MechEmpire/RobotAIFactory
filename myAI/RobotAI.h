@@ -7,13 +7,13 @@
 class RobotAI:public RobotAI_Interface
 {
 protected:
-	//TODO:¿ÉÒÔÔÚÕâÀïÌí¼ÓÄã×Ô¼ºµÄ³ÉÔ±±äÁ¿
+	//TODO:å¯ä»¥åœ¨è¿™é‡Œæ·»åŠ ä½ è‡ªå·±çš„æˆå‘˜å˜é‡
 
 
 public:
 
 	//************************************************
-	//ÕâÒ»¶Îº¯ÊýÉùÃ÷±ðÂÒ¶¯°¡£¬·ñÔò»ú¼×Å×ÃªÁË±ð¹ÖÎÒ
+	//è¿™ä¸€æ®µå‡½æ•°å£°æ˜Žåˆ«ä¹±åŠ¨å•Šï¼Œå¦åˆ™æœºç”²æŠ›é”šäº†åˆ«æ€ªæˆ‘
 
 	RobotAI();
 	virtual ~RobotAI();
@@ -21,26 +21,26 @@ public:
 
 
 	//-----------------------------------------------------
-	//1.±ØÐëÍê³ÉµÄÕ½¶·ºËÐÄ
+	//1.å¿…é¡»å®Œæˆçš„æˆ˜æ–—æ ¸å¿ƒ
 	//-----------------------------------------------------
 
-	//Ö¡²Ù×Ýº¯Êý
-	//¹¦ÄÜ£ºÔÚÃ¿Ò»Ö¡±»µ÷ÓÃ£¬Íê³ÉÄãµÄ»ú¼×ÔÚÕâÒ»Ö¡µÄ¶¯×÷¾ö²ß
-	//²ÎÊý£ºorder	...	»ú¼×²Ù×ÝÖ¸Áî£¬ÄãÔÚº¯ÊýÌåÖÐ¸øËü¸³ÖµÒÔ²Ù×Ý»ú¼×ÔÚÕâÒ»Ö¡µÄÐÐÎª
-	//		info	...	Õ½³¡ÐÅÏ¢
-	//		myID	... ×Ô¼º»ú¼×ÔÚinfoÖÐrobotÊý×é¶ÔÓ¦µÄÏÂ±ê
-	//		(Õâ¼¸¸ö²ÎÊýµÄÏêÏ¸ËµÃ÷ÔÚ¿ª·¢ÊÖ²á¿ÉÒÔÕÒµ½£¬ÄãÒ²¿ÉÒÔÔÚRobotAIstruct.hÖÐÖ±½ÓÕÒµ½ËüÃÇµÄ´úÂë)
+	//å¸§æ“çºµå‡½æ•°
+	//åŠŸèƒ½ï¼šåœ¨æ¯ä¸€å¸§è¢«è°ƒç”¨ï¼Œå®Œæˆä½ çš„æœºç”²åœ¨è¿™ä¸€å¸§çš„åŠ¨ä½œå†³ç­–
+	//å‚æ•°ï¼šorder	...	æœºç”²æ“çºµæŒ‡ä»¤ï¼Œä½ åœ¨å‡½æ•°ä½“ä¸­ç»™å®ƒèµ‹å€¼ä»¥æ“çºµæœºç”²åœ¨è¿™ä¸€å¸§çš„è¡Œä¸º
+	//		info	...	æˆ˜åœºä¿¡æ¯
+	//		myID	... è‡ªå·±æœºç”²åœ¨infoä¸­robotæ•°ç»„å¯¹åº”çš„ä¸‹æ ‡
+	//		(è¿™å‡ ä¸ªå‚æ•°çš„è¯¦ç»†è¯´æ˜Žåœ¨å¼€å‘æ‰‹å†Œå¯ä»¥æ‰¾åˆ°ï¼Œä½ ä¹Ÿå¯ä»¥åœ¨RobotAIstruct.hä¸­ç›´æŽ¥æ‰¾åˆ°å®ƒä»¬çš„ä»£ç )
 	virtual void Update(RobotAI_Order& order,const RobotAI_BattlefieldInformation& info,int myID);
 
 
 
-	//ÌôÑ¡×°±¸º¯Êý
-	//¹¦ÄÜ£ºÔÚÕ½¶·¿ªÊ¼Ê±ÎªÄãµÄ»ú¼×Ñ¡ÔñºÏÊÊµÄÎäÆ÷ÅÚËþºÍÒýÇæÔØ¾ß
-	//²ÎÊý£ºweapon	...	´ú±íÄãÑ¡ÔñµÄÎäÆ÷£¬ÔÚº¯ÊýÌåÖÐ¸øËü¸³Öµ
-	//		engine	...	´ú±íÄãÑ¡ÔñµÄÒýÇæ£¬ÔÚº¯ÊýÌåÖÐ¸øËü¸³Öµ
-	//tip:	À¨ºÅÀïµÄ²ÎÊýÊÇÃ¶¾ÙÀàÐÍ weapontypename »ò enginetypename
-	//		¿ª·¢ÎÄµµÖÐÓÐÏêÏ¸ËµÃ÷£¬ÄãÒ²¿ÉÒÔÔÚRobotAIstruct.hÖÐÖ±½ÓÕÒµ½ËüÃÇµÄ´úÂë
-	//tip:	×îºóÒ»¸öboolÊÇÃ»ÓÃµÄ¡£¡£ÄÇÊÇÒ»¸öÍË»¯µÄÆ÷¹Ù
+	//æŒ‘é€‰è£…å¤‡å‡½æ•°
+	//åŠŸèƒ½ï¼šåœ¨æˆ˜æ–—å¼€å§‹æ—¶ä¸ºä½ çš„æœºç”²é€‰æ‹©åˆé€‚çš„æ­¦å™¨ç‚®å¡”å’Œå¼•æ“Žè½½å…·
+	//å‚æ•°ï¼šweapon	...	ä»£è¡¨ä½ é€‰æ‹©çš„æ­¦å™¨ï¼Œåœ¨å‡½æ•°ä½“ä¸­ç»™å®ƒèµ‹å€¼
+	//		engine	...	ä»£è¡¨ä½ é€‰æ‹©çš„å¼•æ“Žï¼Œåœ¨å‡½æ•°ä½“ä¸­ç»™å®ƒèµ‹å€¼
+	//tip:	æ‹¬å·é‡Œçš„å‚æ•°æ˜¯æžšä¸¾ç±»åž‹ weapontypename æˆ– enginetypename
+	//		å¼€å‘æ–‡æ¡£ä¸­æœ‰è¯¦ç»†è¯´æ˜Žï¼Œä½ ä¹Ÿå¯ä»¥åœ¨RobotAIstruct.hä¸­ç›´æŽ¥æ‰¾åˆ°å®ƒä»¬çš„ä»£ç 
+	//tip:	æœ€åŽä¸€ä¸ªboolæ˜¯æ²¡ç”¨çš„ã€‚ã€‚é‚£æ˜¯ä¸€ä¸ªé€€åŒ–çš„å™¨å®˜
 	virtual void ChooseArmor(weapontypename& weapon,enginetypename& engine,bool);
 
 
@@ -52,25 +52,25 @@ public:
 
 
 	//-----------------------------------------------------
-	//2.¸öÐÔÐÅÏ¢
+	//2.ä¸ªæ€§ä¿¡æ¯
 	//-----------------------------------------------------
 
-	//·µ»ØÄãµÄ»ú¼×µÄÃû×Ö
+	//è¿”å›žä½ çš„æœºç”²çš„åå­—
 	virtual string GetName();
 	
-	//·µ»Ø»ú¼×ÖÆ×÷ÈË»òÍÅ¶ÓµÄÃû×Ö
+	//è¿”å›žæœºç”²åˆ¶ä½œäººæˆ–å›¢é˜Ÿçš„åå­—
 	virtual string GetAuthor();
 
 
 
-	//·µ»ØÒ»¸ö(-255,255)Ö®¼äµÄ»ú¼×ÎäÆ÷ÅÚËþµÄÑÕÉ«Æ«ÒÆÖµ£¨ºì¡¢ÂÌ¡¢À¶£©
-	//Äã¿ÉÒÔÔÚflash¿Í»§¶ËµÄ²ÎÊýÔ¤ÀÀÖÐÔ¤ÀÀÑÕÉ«´îÅäµÄÐ§¹û
+	//è¿”å›žä¸€ä¸ª(-255,255)ä¹‹é—´çš„æœºç”²æ­¦å™¨ç‚®å¡”çš„é¢œè‰²åç§»å€¼ï¼ˆçº¢ã€ç»¿ã€è“ï¼‰
+	//ä½ å¯ä»¥åœ¨flashå®¢æˆ·ç«¯çš„å‚æ•°é¢„è§ˆä¸­é¢„è§ˆé¢œè‰²æ­é…çš„æ•ˆæžœ
 	virtual int GetWeaponRed();
 	virtual int GetWeaponGreen();
 	virtual int GetWeaponBlue();
 
-	//·µ»ØÒ»¸ö(-255,255)Ö®¼äµÄ»ú¼×ÒýÇæÔØ¾ßµÄÑÕÉ«Æ«ÒÆÖµ£¨ºì¡¢ÂÌ¡¢À¶£©
-	//Äã¿ÉÒÔÔÚflash¿Í»§¶ËµÄ²ÎÊýÔ¤ÀÀÖÐÔ¤ÀÀÑÕÉ«´îÅäµÄÐ§¹û
+	//è¿”å›žä¸€ä¸ª(-255,255)ä¹‹é—´çš„æœºç”²å¼•æ“Žè½½å…·çš„é¢œè‰²åç§»å€¼ï¼ˆçº¢ã€ç»¿ã€è“ï¼‰
+	//ä½ å¯ä»¥åœ¨flashå®¢æˆ·ç«¯çš„å‚æ•°é¢„è§ˆä¸­é¢„è§ˆé¢œè‰²æ­é…çš„æ•ˆæžœ
 	virtual int GetEngineRed();
 	virtual int GetEngineGreen();
 	virtual int GetEngineBlue();
@@ -81,30 +81,30 @@ public:
 
 
 	//-----------------------------------------------------
-	//3.ÓÃ²»ÓÃËæÄãµÄ´¥·¢º¯Êý
+	//3.ç”¨ä¸ç”¨éšä½ çš„è§¦å‘å‡½æ•°
 	//-----------------------------------------------------
 
 
-	//Ò»³¡Õ½¶·¿ªÊ¼Ê±±»µ÷ÓÃ£¬¿ÉÄÜ¿ÉÒÔÓÃÀ´³õÊ¼»¯
-	//²ÎÊý£ºinfo	...	Õ½³¡ÐÅÏ¢
-	//		myID	... ×Ô¼º»ú¼×ÔÚinfoÖÐrobotÊý×é¶ÔÓ¦µÄÏÂ±ê
+	//ä¸€åœºæˆ˜æ–—å¼€å§‹æ—¶è¢«è°ƒç”¨ï¼Œå¯èƒ½å¯ä»¥ç”¨æ¥åˆå§‹åŒ–
+	//å‚æ•°ï¼šinfo	...	æˆ˜åœºä¿¡æ¯
+	//		myID	... è‡ªå·±æœºç”²åœ¨infoä¸­robotæ•°ç»„å¯¹åº”çš„ä¸‹æ ‡
 	virtual void onBattleStart(const RobotAI_BattlefieldInformation& info,int myID);
 	
 	
 	
-	//Ò»³¡Õ½¶·½áÊøÊ±±»µ÷ÓÃ£¬¿ÉÄÜ¿ÉÒÔÓÃÀ´Îö¹¹Äã¶¯Ì¬·ÖÅäµÄÄÚ´æ¿Õ¼ä£¨Èç¹ûÄãÓÃÁËµÄ»°£©
-	//²ÎÊý£ºinfo	...	Õ½³¡ÐÅÏ¢
-	//		myID	... ×Ô¼º»ú¼×ÔÚinfoÖÐrobotÊý×é¶ÔÓ¦µÄÏÂ±ê
+	//ä¸€åœºæˆ˜æ–—ç»“æŸæ—¶è¢«è°ƒç”¨ï¼Œå¯èƒ½å¯ä»¥ç”¨æ¥æžæž„ä½ åŠ¨æ€åˆ†é…çš„å†…å­˜ç©ºé—´ï¼ˆå¦‚æžœä½ ç”¨äº†çš„è¯ï¼‰
+	//å‚æ•°ï¼šinfo	...	æˆ˜åœºä¿¡æ¯
+	//		myID	... è‡ªå·±æœºç”²åœ¨infoä¸­robotæ•°ç»„å¯¹åº”çš„ä¸‹æ ‡
 	virtual void onBattleEnd(const RobotAI_BattlefieldInformation& info,int myID);			
 	
 	
-	//ÓÐ»ú¼×¿ª»ðÊ±±»µ÷ÓÃ
-	//²ÎÊý£ºfireID	... ¿ª»ðµÄ»ú¼×ÏÂ±ê
+	//æœ‰æœºç”²å¼€ç«æ—¶è¢«è°ƒç”¨
+	//å‚æ•°ï¼šfireID	... å¼€ç«çš„æœºç”²ä¸‹æ ‡
 	virtual void onSomeoneFire(int);
 
 
-	//±»×Óµ¯»÷ÖÐÊ±±»µ÷ÓÃ
-	//²ÎÊý£ºbtn	...	»÷ÖÐÄãµÄ×Óµ¯ÖÖÀà£¨Ã¶¾ÙÀàÐÍ£©
+	//è¢«å­å¼¹å‡»ä¸­æ—¶è¢«è°ƒç”¨
+	//å‚æ•°ï¼šbtn	...	å‡»ä¸­ä½ çš„å­å¼¹ç§ç±»ï¼ˆæžšä¸¾ç±»åž‹ï¼‰
 	virtual void onHit(int,bullettypename);
 
 	//-------------------------------------------------------------
@@ -115,7 +115,7 @@ public:
 
 
 
-	//TODO:¿ÉÒÔÔÚÕâÀïÌí¼ÓÄã×Ô¼ºµÄº¯ÊýÉùÃ÷,²¢ÔÚRobotAI.cppÖÐ±àÐ´ÏàÓ¦µÄº¯Êý¶¨Òå
+	//TODO:å¯ä»¥åœ¨è¿™é‡Œæ·»åŠ ä½ è‡ªå·±çš„å‡½æ•°å£°æ˜Ž,å¹¶åœ¨RobotAI.cppä¸­ç¼–å†™ç›¸åº”çš„å‡½æ•°å®šä¹‰
 
 
 

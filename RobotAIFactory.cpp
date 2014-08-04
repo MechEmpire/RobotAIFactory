@@ -1,10 +1,10 @@
-// RobotAIFactory.cpp : ���� DLL Ӧ�ó���ĵ���������
+// RobotAIFactory.cpp : 定义 DLL 应用程序的导出函数。
 //
 
 #include "sys/RobotAI_Interface.h"
 #include "myAI/RobotAI.h"
 
-//���ﲻ��Ҫ���κθĶ�
+//这里不需要做任何改动
 
 extern "C" _declspec(dllexport) RobotAI_Interface* Export()
 {
