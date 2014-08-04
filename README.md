@@ -1,5 +1,7 @@
 # RobotAIFactory
 ## 机甲AI空模板
 =====
-Linux: 	不包括dllmain.cpp
-Win:	包括dllmain.cpp
+
+Linux:	RobotAIFactoryLinux.cpp
+
+Win:	RobotAIFactory.cpp+dllmain.cpp

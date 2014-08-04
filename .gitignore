@@ -1,6 +1,6 @@
 *.vcxproj
 *.vcxproj.filters
-
+*.so
 
 
 Debug/
