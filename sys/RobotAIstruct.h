@@ -27,6 +27,7 @@ enum weapontypename
 
 	//二期
 	,WT_GrenadeThrower
+	,WT_MineLayer
 };
 
 enum enginetypename
@@ -51,7 +52,10 @@ enum bullettypename
 	
 	//在这里添加游戏玩家可见(应该是武器直接发射的)类型
 	,BT_Grenade
-	
+	,BT_Mine
+
+	,BT_TinyBall		//布雷器的辅助子弹
+
 
 
 	//以下是功能性的类型
