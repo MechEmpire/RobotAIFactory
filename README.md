@@ -2,6 +2,6 @@
 ## 机甲AI空模板
 =====
 
-Linux:	RobotAIFactoryLinux.cpp
+This directory is for linux only.
 
-Win:	RobotAIFactory.cpp+dllmain.cpp
+Linux:	RobotAIFactoryLinux.cpp
