@@ -27,6 +27,7 @@ enum weapontypename
 
 	//二期
 	,WT_GrenadeThrower
+	,WT_MineLayer
 };
 
 enum enginetypename
@@ -35,6 +36,8 @@ enum enginetypename
 	,ET_Robotman
 	,ET_AFV
 	,ET_UFO
+
+	//二期
 };
 
 enum bullettypename
@@ -49,9 +52,12 @@ enum bullettypename
 	,BT_TrackingMissile
 	,BT_ElectricSaw
 	
-	//在这里添加游戏玩家可见(应该是武器直接发射的)类型
-	,BT_Grenade
 	
+	//二期
+	,BT_Grenade
+	,BT_Mine
+
+	,BT_TinyBall		//布雷器的辅助子弹
 
 
 	//以下是功能性的类型
@@ -101,6 +107,8 @@ struct RobotAI_RobotInformation
 struct RobotAI_BulletInformation
 {
 	int entityID;	//这个不用管啦
+
+	int launcherID;	//子弹发射者的下标
 
 	bullettypename type;		//子弹种类（枚举类型）
 
