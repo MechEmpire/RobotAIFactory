@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../sys/RobotAI_Interface.h"
+#include "RobotAI_Interface.h"
 
 
 
@@ -57,7 +57,7 @@ public:
 
 	//返回你的机甲的名字
 	virtual string GetName();
-	
+
 	//返回机甲制作人或团队的名字
 	virtual string GetAuthor();
 
@@ -89,15 +89,15 @@ public:
 	//参数：info	...	战场信息
 	//		myID	... 自己机甲在info中robot数组对应的下标
 	virtual void onBattleStart(const RobotAI_BattlefieldInformation& info,int myID);
-	
-	
-	
+
+
+
 	//一场战斗结束时被调用，可能可以用来析构你动态分配的内存空间（如果你用了的话）
 	//参数：info	...	战场信息
 	//		myID	... 自己机甲在info中robot数组对应的下标
-	virtual void onBattleEnd(const RobotAI_BattlefieldInformation& info,int myID);			
-	
-	
+	virtual void onBattleEnd(const RobotAI_BattlefieldInformation& info,int myID);
+
+
 	//有机甲开火时被调用
 	//参数：fireID	... 开火的机甲下标
 	virtual void onSomeoneFire(int);

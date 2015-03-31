@@ -18,7 +18,7 @@ SRC_FILES = $(foreach n, $(VPATH), $(wildcard $(n)/*.cpp)) RobotAIFactoryLinux.c
 
 OUTPUT_DIR=.
 MYAI_DIR=./myAI
-
+SYS_DIR=./sys
 
 all:
-	$(CC) -O2 -fPIC -shared -I $(MYAI_DIR) -o $(OUTPUT_DIR)/libmyAI.so $(SRC_FILES)
+	$(CC) -O2 -fPIC -shared -I$(SYS_DIR) -I$(MYAI_DIR) -o $(OUTPUT_DIR)/libmyAI.so $(SRC_FILES)
