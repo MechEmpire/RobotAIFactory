@@ -2,7 +2,7 @@
 //
 
 #include "sys/RobotAI_Interface.h"
-#include "myAI/RobotAI.h"
+#include "RobotAI.h"
 
 //这里不需要做任何改动
 
