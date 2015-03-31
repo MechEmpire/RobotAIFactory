@@ -51,8 +51,8 @@ enum bullettypename
 	,BT_PlasmaBall
 	,BT_TrackingMissile
 	,BT_ElectricSaw
-	
-	
+
+
 	//二期
 	,BT_Grenade
 	,BT_Mine
@@ -61,7 +61,7 @@ enum bullettypename
 
 
 	//以下是功能性的类型
-	
+
 	,BT_NULL
 };
 
@@ -93,7 +93,7 @@ struct RobotAI_RobotInformation
 	double engineRotation;	//引擎当前角度，与x轴正方向夹角
 	double weaponRotation;	//武器当前角度，与x轴正方向夹角
 	double vx,vy,vr;	//x轴投影速度，y轴投影速度，旋转角速度
-	
+
 	int hp;				//机甲当前剩余生命值
 
 
@@ -139,17 +139,17 @@ struct RobotAI_BattlefieldInformation
 
 	RobotAI_BulletInformation bulletInformation[Info_MaxBullets];
 
-	
+
 	int num_obstacle;	//地图上的障碍物数量（便于循环访问于何时终止）
 
 	Circle obstacle[Info_MaxObstacles];
 
-	
+
 	int num_arsenal;	//地图上的军火库数量（便于循环访问于何时终止）
 
 	RobotAI_ArsenalInformation arsenal[Info_MaxArsenals];
 
 
-	
+
 	Box boundary;		//战场边界，Box结构体
 };
