@@ -5,7 +5,7 @@
 using namespace std;
 
 
-using namespace std;
+
 
 
 typedef void (*FP_TRACE)(string);
@@ -21,8 +21,12 @@ typedef double (*FP_GET_DOUBLE_B)(bullettypename);
 
 #define TRACE (*trace)
 
+
+//这里是一些可以获取装备静态信息的做成宏的函数指针
+//你可以理解为函数
+//调用方法和调用函数看起来一样，比如我希望获得加农炮的弹仓子弹数：
+//get_weapon_ammo(WT_Cannon);
 #define get_weapon_name (*getWeaponName)
-//#define get_weapon_damage (*getWeaponDamage)
 #define get_weapon_ammo (*getWeaponAmmo)
 #define get_weapon_coolingTime (*getWeaponCoolingTime)
 #define get_weapon_inaccuracy (*getWeaponInaccuracy)
@@ -65,13 +69,9 @@ public:
 	///////////////////////////////////////
 
 
-	//可供选择的功能方法
-	//virtual string trace()=0;		//输出调试信息函数(这种方式不方便，争取做成个什么函数指针啥的)
-	//void (*trace)(string);			//输出调试信息函数指针
-	FP_TRACE trace;					//输出调试信息函数指针
-									//调用时	(*trace)("info needed to be print")
+	//输出调试信息，大家可以直接使用cout，不用使用这个方法了
+	FP_TRACE trace;					
 
-									//赋值时：全局函数	trace=trace_global;
 	//StaticDataGetter
 	//weapon
 	FP_GET_STRING_W getWeaponName;
@@ -98,6 +98,6 @@ public:
 	virtual void onBattleEnd(const RobotAI_BattlefieldInformation&,int)=0;			//一场战斗结束时被调用
 
 	
-	virtual void onSomeoneFire(int)=0;
-	virtual void onHit(int,bullettypename)=0;		//被击中时调用
+	virtual void onSomeoneFire(int)=0;				//有机甲开火时被调用
+	virtual void onHit(int,bullettypename)=0;		//被击中时被调用
 };
